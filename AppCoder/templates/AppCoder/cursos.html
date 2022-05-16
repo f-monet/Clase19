@@ -4,12 +4,24 @@
 
 {% block contenidoQueCambia %}
 
-<h1>ESTE ES EL CONTENIDO QUE CAMBIÓ</h1>
+<form action="{% url 'cursos' %}" method="post">{% csrf_token %}
+
+    <table>
+        {{ formulario.as_table}}
+    </table>
+    <input type="submit" value="Enviar formulario via API"> 
+
+
+</form>
+
+
+
+</form>
 
 {% endblock %}
 
 {% block titulo %}
 
-    <h1>CURSOS</h1>
+    <h1>CURSOS FORMULARIOS</h1>
 
 {% endblock %}
