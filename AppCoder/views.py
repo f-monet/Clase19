@@ -63,8 +63,7 @@ def buscar(request):
         return render(request, 'AppCoder/resultadosBusqueda.html', {'cursos':cursos, 'comision':comision} )
     else:
         respuesta="No se ingresó ninguna comisión"
-        return HttpResponse(respuesta)
-
+        return render(request, 'AppCoder/resultadosBusqueda.html', {'respuesta':respuesta} )
 
 
 

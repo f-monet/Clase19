@@ -4,7 +4,10 @@
 
 {% block contenidoQueCambia %}
 
+{% if not respuesta %}
+
 <h1>estamos buscando los cursos de la comisión {{comision}}</h1>
+
 
 {% if cursos %}
 
@@ -15,9 +18,15 @@
     <br>
 {% endfor %}
 <ul>
-
+{% else %}
+<p>NO SE ENCONTRARON DATOS PARA ESA COMISION</p>
 {% endif %}
 
+{% else %}
+
+<p style="color:red"> {{respuesta}}</p>
+
+{% endif %}
 {% endblock %}
 
 {% block titulo %}
